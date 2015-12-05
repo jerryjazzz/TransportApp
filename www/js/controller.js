@@ -1,78 +1,42 @@
 /**
  * Angular JS Controllers
  */
-angular.module('transportApp', [ 'ionic' ])
+var app = angular.module('TransportApp.controllers', []);
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+app.controller('HomeTabCtrl', function($scope) {
+	console.log('HomeTabCtrl');
+});
 
-	$stateProvider.state('tabs', {
-		url : "/tab",
-		abstract : true,
-		templateUrl : "tabs.html"
-	}).state('tabs.home', {
-		url : "/home",
-		views : {
-			'home-tab' : {
-				templateUrl : "home.html",
-				controller : 'HomeTabCtrl'
-			}
-		}
-	}).state('tabs.stops', {
-		url : "/stops",
-		views : {
-			'stops-tab' : {
-				templateUrl : "stops.html",
-				controller : "StopTabCtrl"
-			}
-		}
-	}).state('tabs.routes', {
-		url : "/routes",
-		views : {
-			'routes-tab' : {
-				templateUrl : "routes.html",
-				controller: "RoutesTabCtrl"
-			}
-		}
-	}).state('tabs.locate', {
-		url : "/locate",
-		views : {
-			'locate-tab' : {
-				templateUrl : "locate.html",
-				controller : "LocateTabCtrl"
-			}
-		}
-	}).state('tabs.settings', {
-		url : "/settings",
-		views : {
-			'settings-tab' : {
-				templateUrl : "settings.html",
-				controller : "SettingsTabCtrl"
-			}
-		}
+app.controller('StopTabCtrl', function($scope) {
+	console.log('StopTabCtrl');
+});
+
+app.controller('RoutesTabCtrl', function($scope) {
+	console.log('RoutesTabCtrl');
+});
+
+app.controller('LocateTabCtrl', function($scope, $ionicLoading, MapService) {
+	var defaultLat = 18.505175;
+	var defaultLng = 73.791721;
+	var map = new google.maps.Map(document.getElementById("locate-content"),
+			MapService.getMapOptions(defaultLat, defaultLng));
+
+	var marker = MapService.getMapMarker(map, defaultLat, defaultLng,
+			"Default Location");
+
+	navigator.geolocation.getCurrentPosition(function(pos) {
+		$scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude,
+				pos.coords.longitude));
+	}, function(error) {
+
+		$scope.loading = $ionicLoading.show({
+			content : 'Unable to current location...<br/>' + error.message,
+			showBackdrop : false
+		});
 	});
 
-	$urlRouterProvider.otherwise("/tab/home");
-	$ionicConfigProvider.tabs.position('bottom');
-	$ionicConfigProvider.navBar.alignTitle('center');
+});
 
-})
-
-.controller('HomeTabCtrl', function($scope) {
-	console.log('HomeTabCtrl');
-})
-
-.controller('StopTabCtrl', function($scope) {
-	console.log('StopTabCtrl');
-})
-
-.controller('RoutesTabCtrl', function($scope) {
-	console.log('RoutesTabCtrl');
-})
-
-.controller('LocateTabCtrl', function($scope) {
-	console.log('LocateTabCtrl');
-})
-
-.controller('SettingsTabCtrl', function($scope) {
+app.controller('SettingsTabCtrl', function($scope) {
 	console.log('SettingsTabCtrl');
 });
