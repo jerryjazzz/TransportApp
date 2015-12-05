@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="transportApp">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+<title>The Transport App</title>
+
+<!-- <link href="http://code.ionicframework.com/nightly/css/ionic.min.css" rel="stylesheet"> -->
+<link href="css/ionic-1.1.1.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+	<ion-nav-bar class="nav-title-slide-ios7 bar-positive"> <ion-nav-back-button
+		class="button-icon ion-arrow-left-c"> </ion-nav-back-button> </ion-nav-bar>
+
+	<ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+	<script id="tabs.html" type="text/ng-template">
+    <ion-tabs class="tabs-icon-top tabs-positive">
+
+      <ion-tab title="Routes" icon="ion-navigate" href="#/tab/routes">
+        <ion-nav-view name="routes-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Stops" icon="ion-ios-location" href="#/tab/stops">
+        <ion-nav-view name="stops-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Home" icon="ion-android-home" href="#/tab/home">
+        <ion-nav-view name="home-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Locate Me" icon="ion-flag" href="#/tab/locate">
+        <ion-nav-view name="locate-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Settings" icon="ion-settings" href="#/tab/settings">
+        <ion-nav-view name="settings-tab"></ion-nav-view>
+      </ion-tab>
+
+    </ion-tabs>
+  </script>
+
+	<script id="home.html" type="text/ng-template">
+    <ion-view title="Home">
+      <ion-content class="padding">
+        
+      </ion-content>
+    </ion-view>
+  </script>
+
+	<script id="stops.html" type="text/ng-template">
+    <ion-view title="Stops" class="padding">
+      <ion-content>
+        
+      </ion-content>
+    </ion-view>
+  </script>
+
+	<script id="stop-view.html" type="text/ng-template">
+    <ion-view title="Stops" class="padding">
+      <ion-content>
+        
+      </ion-content>
+    </ion-view>
+  </script>
+  
+	<script id="routes.html" type="text/ng-template">
+    <ion-view title="Routes">
+      <ion-content class="padding">
+        
+      </ion-content>
+    </ion-view>
+  </script>
+  
+  	<script id="route-view.html" type="text/ng-template">
+    <ion-view title="Stops" class="padding">
+      <ion-content>
+        
+      </ion-content>
+    </ion-view>
+  </script>
+
+	<script id="locate.html" type="text/ng-template">
+    <ion-view title="Locate Me">
+      <ion-content class="padding">
+        
+      </ion-content>
+    </ion-view>
+  </script>
+
+	<script id="settings.html" type="text/ng-template">
+    <ion-view title="Settings">
+      <ion-content class="padding">
+      </ion-content>
+    </ion-view>
+  </script>
+
+	<!-- <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>-->
+	<script src="js/ionic-1.1.1.bundle.min.js"></script>
+	<script src="js/controller.js"></script>
+</body>
+</html>
