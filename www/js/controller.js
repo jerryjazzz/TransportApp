@@ -3,7 +3,7 @@
  */
 angular.module('transportApp', [ 'ionic' ])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
 	$stateProvider.state('tabs', {
 		url : "/tab",
