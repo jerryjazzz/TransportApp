@@ -52,6 +52,8 @@ angular.module('transportApp', [ 'ionic' ])
 	});
 
 	$urlRouterProvider.otherwise("/tab/home");
+	$ionicConfigProvider.tabs.position('bottom');
+	$ionicConfigProvider.navBar.alignTitle('center');
 
 })
 
