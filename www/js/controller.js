@@ -16,6 +16,7 @@ app.controller('RoutesTabCtrl', function($scope) {
 });
 
 app.controller('LocateTabCtrl', function($scope, $ionicLoading, MapService) {
+	/*
 	var defaultLat = 18.505175;
 	var defaultLng = 73.791721;
 	var map = new google.maps.Map(document.getElementById("locate-content"),
@@ -34,7 +35,7 @@ app.controller('LocateTabCtrl', function($scope, $ionicLoading, MapService) {
 			showBackdrop : false
 		});
 	});
-
+	*/
 });
 
 app.controller('SettingsTabCtrl', function($scope) {
