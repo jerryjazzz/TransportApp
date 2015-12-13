@@ -1,20 +1,20 @@
 /**
  * Angular JS Controllers
  */
-var app = angular.module('transportApp.controllers', [ 'ionic', 'ngCordova']);
+var app = angular.module('transportApp.controllers', [ 'ionic', 'ngCordova' ]);
 
-app.controller('HomeTabCtrl', function($scope, $cordovaToast) {
+app.controller('HomeTabCtrl', function($scope) {
 	console.log('HomeTabCtrl');
+});
+
+app.controller('StopTabCtrl', function($scope, $cordovaToast) {
+	console.log('StopTabCtrl');
 	$cordovaToast.show('Here is a message', 'long', 'center').then(
 			function(success) {
 				console.log('success');
 			}, function(error) {
 				console.log(error.message);
 			});
-});
-
-app.controller('StopTabCtrl', function($scope) {
-	console.log('StopTabCtrl');
 });
 
 app.controller('RoutesTabCtrl', function($scope) {

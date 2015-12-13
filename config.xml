@@ -29,11 +29,5 @@
 		<allow-intent href="itms:*" />
 		<allow-intent href="itms-apps:*" />
 	</platform>
-	<feature name="Toast">
-		<param name="android-package" value="nl.xservices.plugins.Toast" />
-		<param name="wp-package" value="Toast" />
-		<param name="id" value="cordova-plugin-x-toast" />
-		<param name="url"
-			value="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
-	</feature>
-</widget>
+	
+<feature name="Toast"><param name="android-package" value="nl.xservices.plugins.Toast" /><param name="wp-package" value="Toast" /><param name="id" value="cordova-plugin-x-toast" /><param name="url" value="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin" /></feature></widget>
