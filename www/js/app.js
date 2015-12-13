@@ -1,10 +1,9 @@
 /**
  * Angular JS App file
  */
-var app = angular.module('TransportApp', [
+var app = angular.module('transportApp', [
   'ionic',
-  'TransportApp.controllers',
-  'TransportApp.services'
+  'transportApp.controllers'
   ]);
 /*
 app.run(function($ionicPlatform) {
