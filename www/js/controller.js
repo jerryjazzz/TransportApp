@@ -1,10 +1,16 @@
 /**
  * Angular JS Controllers
  */
-var app = angular.module('transportApp.controllers', [ 'ionic' ]);
+var app = angular.module('transportApp.controllers', [ 'ionic', 'ngCordova']);
 
-app.controller('HomeTabCtrl', function($scope) {
+app.controller('HomeTabCtrl', function($scope, $cordovaToast) {
 	console.log('HomeTabCtrl');
+	$cordovaToast.show('Here is a message', 'long', 'center').then(
+			function(success) {
+				console.log('success');
+			}, function(error) {
+				console.log(error.message);
+			});
 });
 
 app.controller('StopTabCtrl', function($scope) {
@@ -23,7 +29,8 @@ app.controller('LocateTabCtrl', function($scope) {
 		zoom : 16,
 		mapTypeId : google.maps.MapTypeId.ROADMAP
 	};
-	var map = new google.maps.Map(document.getElementById("locate-content"), mapOptions);
+	var map = new google.maps.Map(document.getElementById("locate-content"),
+			mapOptions);
 
 });
 
